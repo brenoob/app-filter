@@ -1,5 +1,7 @@
 // import { useState } from 'react'
 import { Plus } from "lucide-react"
+import { Header } from "./components/header"
+import { Tabs } from "./components/tabs"
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -7,8 +9,8 @@ function App() {
   return (
     <div className="py-10 space-y-8">
       <div>
-        header
-        abas
+        <Header />
+        <Tabs />
       </div>
       <div>
         <main className="max-w-6xl mx-auto space-y-5">
