@@ -1,83 +1,62 @@
-import { ChevronDown } from 'lucide-react'
-
-import nivoLogo from '../assets/logo-nivo.svg'
-import { Badge } from './ui/badge'
+import { ListVideo, Tags, Settings, Code2, ChevronDown, Menu, X } from 'lucide-react'
+import { useState } from 'react'
 
 export function Header() {
-  return (
-    <div className="max-w-[1200px] mx-auto flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2.5">
-          <img src={nivoLogo} alt="nivo.video" />
+  const [isOpen, setIsOpen] = useState(true)
+  // console.log(isOpen);
 
-          <Badge>BETA</Badge>
+  const toggleMenu = () => {
+    const menu = document.querySelector<HTMLDivElement>('.menu')!
+    menu.classList.toggle('hidden', isOpen)
+    setIsOpen(!isOpen)
+  }
+
+  // console.log(isOpen);
+
+  return (
+    <div className="border-b  border-zinc-800 bg-zinc-900 ">
+      <nav className="flex items-center  max-w-[1200px] mx-auto justify-between">
+        <div className="sm:hidden absolute scale-75 top-0 right-0 toggleButton">
+          <button className="navbar-burger flex items-end relative rounded bg-teal-400 text-teal-950 hover:bg-teal-500  p-3">
+            {isOpen ? <X onClick={toggleMenu} className="block relative  sm:hidden" /> : <Menu onClick={toggleMenu} className="block relative sm:hidden" />}
+          </button>
+        </div>
+        <div className='menu  sm:flex '>
+          <a href="" className="py-1.5 px-3 bg-zinc-800 text-zinc-100 flex items-center text-sm gap-1.5 font-medium rounded-full border border-transparent">
+            <ListVideo className="size-4" />
+            Uploads
+          </a>
+
+          <a href="" className="py-1.5 px-3 text-zinc-300 flex items-center text-sm gap-1.5 font-medium rounded-full border border-transparent hover:border-zinc-800">
+            <Tags className="size-4" />
+            Tags
+          </a>
+
+          <a href="" className="py-1.5 px-3 text-zinc-300 flex items-center text-sm gap-1.5 font-medium rounded-full border border-transparent hover:border-zinc-800">
+            <Settings className="size-4" />
+            Settings
+          </a>
+
+          <a href="" className="py-1.5 px-3 text-zinc-300 flex items-center text-sm gap-1.5 font-medium rounded-full border border-transparent hover:border-zinc-800">
+            <Code2 className="size-4" />
+            Developers
+          </a>
         </div>
 
-        <svg
-          width="6"
-          height="16"
-          viewBox="0 0 6 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line
-            x1="1.18372"
-            y1="15.598"
-            x2="5.32483"
-            y2="0.143194"
-            className="stroke-zinc-700"
-          />
-        </svg>
-
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-3">
+          <div className="flex flex-col items-start gap-0.5">
+            <span className="text-sm font-medium">Hong</span>
+            <span className="text-xs text-zinc-400">Development</span>
+          </div>
           <img
-            src="https://github.com/rocketseat.png"
-            className="size-5 rounded-full"
+            src="https://github.com/brenoob.png"
+            className="size-8 rounded-full"
             alt=""
           />
-
-          <span className="text-sm font-medium text-zinc-100">Rocketseat</span>
-
-          <Badge variant="primary">PRO</Badge>
-
-          <ChevronDown className="text-zinc-600 size-4" />
+          <ChevronDown className="size-4 text-zinc-600" />
         </div>
 
-        <svg
-          width="6"
-          height="16"
-          viewBox="0 0 6 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line
-            x1="1.18372"
-            y1="15.598"
-            x2="5.32483"
-            y2="0.143194"
-            className="stroke-zinc-700"
-          />
-        </svg>
-
-        <div className="flex items-center gap-2.5">
-          <span className="text-sm font-medium text-zinc-100">Ignite</span>
-
-          <ChevronDown className="text-zinc-600 size-4" />
-        </div>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <div className="flex flex-col items-end gap-0.5">
-          <span className="text-sm font-medium">Diego Fernandes</span>
-          <span className="text-xs text-zinc-400">diego@nivo.video</span>
-        </div>
-        <img
-          src="https://github.com/diego3g.png"
-          className="size-8 rounded-full"
-          alt=""
-        />
-        <ChevronDown className="size-4 text-zinc-600" />
-      </div>
+      </nav>
     </div>
   )
 }
