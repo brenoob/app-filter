@@ -1,3 +1,10 @@
+# Preview
+![app-filter-desktop](https://github.com/brenoob/app-filter/assets/57812022/1f516956-77f1-475d-ae08-7b6ea94057f8)
+![app-filter-desktop-2](https://github.com/brenoob/app-filter/assets/57812022/f78b7c32-9a3e-4f43-89ee-45c0de95955d)
+![app-filter-mobile](https://github.com/brenoob/app-filter/assets/57812022/9bfe49c1-1840-4059-9d45-824c0939a93e)
+![app-filter-mobile-2](https://github.com/brenoob/app-filter/assets/57812022/f0925ee4-5f71-46ae-ae74-a13567ed1e16)
+![app-filter-mobile-3](https://github.com/brenoob/app-filter/assets/57812022/9c7e3376-f2d7-4210-b7aa-f58c0a47cdfb)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
